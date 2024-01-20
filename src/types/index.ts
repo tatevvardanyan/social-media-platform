@@ -1,0 +1,2 @@
+//interfase
+export default{}
