@@ -10,7 +10,7 @@ import User from "./Components/User"
 const MyRoutes = () => {
     return <BrowserRouter>
         <Routes>
-            < Route path="" element={<Login />} />
+            < Route index element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<AuthMiddleware />}>
                 <Route path="" element={<Profile />} />
