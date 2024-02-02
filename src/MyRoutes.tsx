@@ -4,8 +4,10 @@ import Register from "./Components/Register"
 import AuthMiddleware from "./Components/AuthMiddleware"
 import Profile from "./Components/Profile"
 import Chat from "./Components/Chat"
-import All from "./Components/All"
-import User from "./Components/User"
+import Settings from "./Components/Settings"
+import SearchUsers from "./Components/SearchUsers"
+import Account from "./Components/Account"
+import PostDetails from "./Components/PostDetails"
 
 const MyRoutes = () => {
     return <BrowserRouter>
@@ -14,12 +16,15 @@ const MyRoutes = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<AuthMiddleware />}>
                 <Route path="" element={<Profile />} />
+                <Route path="settings" element={<Settings />} />
                 <Route path="chat" element={<Chat />} />
-                <Route path="all" element={<All />} />
-                <Route path="user/:id" element={<User />} />
+                {/* unfinished chat */}
+                <Route path="search" element={<SearchUsers />} />
+                <Route path="search/account/:id" element={<Account />} />
+                <Route path="post/:id" element={<PostDetails />} />
                 <Route />
             </Route>
-            <Route path="*" element={<h2>Page not found...</h2>}/>
+            <Route path="*" element={<h2>Page not found...</h2>} />
         </Routes>
     </BrowserRouter>
 }

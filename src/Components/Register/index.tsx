@@ -1,20 +1,28 @@
 import { useState } from "react"
 import { User } from "../../types"
 import { createUserWithEmailAndPassword } from "firebase/auth"
-import { auth } from "../../firebase-config"
+import { auth, db } from "../../firebase-config"
 import { useNavigate } from "react-router-dom"
+import { addDoc, collection } from "firebase/firestore"
 
 const Register = () => {
     const [user, setUser] = useState<User>({ full_name: "", age: "", login: "", password: "" })
     const [error, SetError] = useState<string>('')
     const navigate = useNavigate()
+    const userList = collection(db, "users")
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         createUserWithEmailAndPassword(auth, user.login, user.password)
-            .then(r => {
+            .then(async r => {
                 //console.log("success", r.user.uid)
                 SetError("")
+                await addDoc(userList, {
+                    full_name: user.full_name,
+                    age: user.age,
+                    profilePicture: "",
+                    userId: r.user.uid
+                })
                 navigate("/")
             })
             .catch(err => {
