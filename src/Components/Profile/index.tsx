@@ -2,13 +2,17 @@ import { useOutletContext } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../../firebase-config"
+import { UsContext } from "../../types"
 import Gallery from "../Gallery"
+import Settings from "../Settings"
+import "./style.css"
 
 const Profile = () => {
     const { user } = useOutletContext<any>()
-    const [account, setAccount] = useState<any>(null)
     const userList = collection(db, "users")
-    const defaultPicture = 'https://media.istockphoto.com/id/1495088043/vector/user-profile-icon-avatar-or-person-icon-profile-picture-portrait-symbol-default-portrait.jpg?s=612x612&w=0&k=20&c=dhV2p1JwmloBTOaGAtaA3AW1KSnjsdMt7-U_3EZElZ0='
+    const defaultPicture = 'https://cdn-icons-png.flaticon.com/512/6512/6512774.png'
+    const [account, setAccount] = useState<UsContext>()
+    const [on, setOn] = useState<boolean>(false)
     const getUserProfile = async () => {
         const q = query(userList, where("userId", "==", user))
         const h = await getDocs(q)
@@ -18,19 +22,36 @@ const Profile = () => {
         }
     }
     useEffect(() => {
-        console.log(account);
         getUserProfile()
-    }, [])
+    }, [account])
 
-    return <div>
-        <h2>Profile</h2>
+    return <div className="box">
         {!account ?
             <p>Please wait loading...</p> :
-            <div>
-                <img src={account.profilePicture ? account.profilePicture : defaultPicture} width='112px' height='112px' />
-                <h1>{account.full_name}</h1>
-            </div>}
-            <Gallery/>
+            <div className="miniBox">
+                <div className="acc">
+                    <div className="photo">
+                        <img src={account.profilePicture ? account.profilePicture : defaultPicture} />
+                    </div>
+                    <div className="ab">
+                        <h1>{account.full_name}</h1>
+                        <h4 >
+                            <span className="material-icons"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons" /> group</span>
+                            {account.friends?account.friends.length:"0"} friends</h4>
+                    </div>
+                </div>
+                <div className="settings">
+                    {
+                        on ? <div className="second">
+                            <button onClick={() => setOn(!on)} >Close</button>
+                            <Settings />
+                        </div> :
+                            <button onClick={() => setOn(!on)}>Open</button>
+                    }
+                </div>
+                <Gallery />
+            </div>
+        }
 
     </div>
 }

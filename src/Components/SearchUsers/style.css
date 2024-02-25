@@ -1,0 +1,26 @@
+.search {
+  padding: 10px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 15px;
+}
+.search .box0 input {
+  width: 160px;
+  font-size: 15px;
+  border-radius: 30px;
+  padding: 5px;
+  background-color: rgba(240, 248, 255, 0.219);
+  color: rgb(8, 8, 8);
+}
+.search .box1 {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 5.5px;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=style.css.map */

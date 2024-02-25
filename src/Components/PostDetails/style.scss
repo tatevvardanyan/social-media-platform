@@ -1,0 +1,40 @@
+@mixin iconsMixin() {
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.det {
+  background-color: rgba(8, 8, 8, 0.397);
+  padding: 6px;
+  border-radius: 25px;
+  .post {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    img {
+      width: 250px;
+      height: 250px;
+      border-radius: 25px;
+      object-fit: cover;
+      object-position: center;
+      border: 1px solid whitesmoke;
+    }
+    h5,
+    p {
+      color: whitesmoke;
+    }
+    p {
+      font-size: 10px;
+    }
+    .material-icons {
+      @include iconsMixin();
+    }
+  }
+  .material-icons {
+    @include iconsMixin();
+  }
+}
+//done

@@ -3,13 +3,14 @@ import { useRef, useState } from "react"
 import { db, storage } from "../../firebase-config"
 import { useOutletContext } from "react-router-dom"
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage"
+import "./style.css"
 
 
 const AddPost = () => {
-    const photoRef = useRef<any>()//change type
-    const postList = collection(db, "posts")
-    const [text, setText] = useState<string>("")
     const { user } = useOutletContext<any>()
+    const postList = collection(db, "posts")
+    const photoRef = useRef<HTMLImageElement | any>()
+    const [text, setText] = useState<string>("")
     const [loading, setLoading] = useState<boolean>(false)
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -42,12 +43,14 @@ const AddPost = () => {
         })
     }
 
-    return <div>
-        <h2>--</h2>
-        <form onSubmit={handleSubmit}>
+    return <div className="add">
+        <form onSubmit={handleSubmit} >
             <div>
-                <input type="text" value={text} onChange={e => setText(e.target.value)} />
-                <input type="file" ref={photoRef} />
+                <label htmlFor="file" className="f">choose file</label>
+                <input type="file" ref={photoRef} id="file" />
+            </div>
+            <div>
+                <input type="text" value={text} onChange={e => setText(e.target.value)} placeholder="..." className="text" />
             </div>
             <div>
                 <button disabled={loading} type="submit">Post</button>

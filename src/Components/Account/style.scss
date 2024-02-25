@@ -1,0 +1,32 @@
+@import "../Profile/style.css";
+@mixin btnMixin($col) {
+  padding: 5px;
+  background-color: $col;
+  border-color: whitesmoke;
+  border-radius: 20px;
+  color: rgb(8, 8, 8);
+  cursor: pointer;
+  &:hover {
+    font-size: small;
+  }
+}
+.box {
+  .box3 {
+    margin-top: 5px;
+    background-color: transparent;
+    padding: 0.2px;
+    .btns {
+      padding: 0.2px;
+      .unfol {
+        @include btnMixin(#73ecfc);
+      }
+      .btnchat {
+        @include btnMixin(#b0f5e1);
+      }
+    }
+    .fol {
+      @include btnMixin(#73ecfc);
+    }
+  }
+}
+//done

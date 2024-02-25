@@ -1,14 +1,16 @@
-import { collection, getDocs, query, where } from "firebase/firestore"
 import { useState } from "react"
+import { collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../../firebase-config"
-import SearchItem from "../SearchItem"
 import { UsContext } from "../../types"
+import SearchItem from "../SearchItem"
+import "./style.css"
 
 const SearchUsers = () => {
-    const [text, setText] = useState<string>("")
-    const [result, setResult] = useState<any>()//change type
     const userList = collection(db, "users")
-    const handleSearch = async (e: any) => { //change type
+    const [result, setResult] = useState<Array<UsContext>>()
+    const [text, setText] = useState<string>("")
+
+    const handleSearch = async (e: any) => {
         let current = e.target.value
         setText(current)
 
@@ -19,19 +21,16 @@ const SearchUsers = () => {
                 id: elm.id
             }
         }))
-        // console.log(result);
 
     }
 
-    return <div>
-        <h2>Search</h2>
-        <div>
-            <label>Search for friends</label>
-            <input type="text" onChange={handleSearch} value={text} />
+    return <div className="search">
+        <div className="box0">
+            <input type="text" onChange={handleSearch} value={text} placeholder="search...(n. s.)" />
         </div>
-        <div>
+        <div className="box1">
             {
-                result?.map((elm: any) => <SearchItem key={elm.id} person={elm} />)
+                result?.map((elm: UsContext) => <SearchItem key={elm.id} person={elm} />)
             }
         </div>
 

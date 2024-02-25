@@ -1,0 +1,38 @@
+.add {
+  padding: 10px;
+  background-color: rgba(41, 40, 40, 0.219);
+  border-radius: 20px;
+}
+.add form {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  gap: 15px;
+}
+.add form #file {
+  display: none;
+}
+.add form .text {
+  width: 160px;
+  font-size: 15px;
+  border-radius: 30px;
+  padding: 5px;
+  background-color: rgba(240, 248, 255, 0.219);
+  color: whitesmoke;
+}
+.add form .f {
+  border: none;
+  color: whitesmoke;
+  border-bottom: 2px solid whitesmoke;
+  background-color: transparent;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+@media (max-width: 630px) {
+  .add form {
+    justify-content: center;
+    align-items: center;
+  }
+}/*# sourceMappingURL=style.css.map */

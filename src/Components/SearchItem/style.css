@@ -1,0 +1,32 @@
+.us {
+  padding: 6px;
+  border: 2.5px solid rgb(156, 156, 156);
+  border-radius: 30px;
+  background-color: #fbe5c8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5px;
+}
+.us img {
+  padding: 0.5px;
+  width: 70px;
+  height: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  background-color: whitesmoke;
+  border: 3.5px solid rgb(8, 8, 8);
+  border-radius: 50%;
+}
+.us div h3 {
+  font-size: 15px;
+}
+.us div h3 a {
+  text-decoration: underline;
+  color: rgb(8, 8, 8);
+}
+.us div .material-icons {
+  font-size: 15px;
+}/*# sourceMappingURL=style.css.map */

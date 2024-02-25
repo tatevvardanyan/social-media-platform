@@ -1,0 +1,33 @@
+.us {
+  padding: 6px;
+  border: 2.5px solid rgb(156, 156, 156);
+  border-radius: 30px;
+  background-color: #fbe5c8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5px;
+  img {
+    padding: 0.5px;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    object-position: center;
+    background-color: whitesmoke;
+    border: 3.5px solid rgb(8, 8, 8);
+    border-radius: 50%;
+  }
+  div {
+    h3 {
+      font-size: 15px;
+      a {
+        text-decoration: underline;
+        color: rgb(8, 8, 8);
+      }
+    }
+    .material-icons {
+      font-size: 15px;
+    }
+  }
+}
+//done

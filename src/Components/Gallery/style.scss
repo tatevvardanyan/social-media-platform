@@ -1,0 +1,25 @@
+.gallery {
+  width: 75%;
+  padding: 5px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: transparent;
+  button {
+    padding: 10px;
+    background-color: #73ecfc;
+    color: #f3ece3;
+    border-color: whitesmoke;
+    border-radius: 20px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+}
+@media (max-width: 960px) {
+  .gallery {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
+//done

@@ -1,0 +1,12 @@
+@import "../Login/style.css";
+.block {
+  .form {
+    width: 100%;
+    div {
+      ::placeholder {
+        font-size: 15px;
+      }
+    }
+  }
+}
+//done

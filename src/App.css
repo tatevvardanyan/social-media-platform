@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: inherit
+}
+
+body {
+    background-color: #fbe5c8;
+}
+.App{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

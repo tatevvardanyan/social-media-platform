@@ -1,0 +1,78 @@
+.box {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.box .miniBox {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+.box .miniBox .acc {
+  padding: 10px;
+  background-color: rgba(41, 40, 40, 0.219);
+  border-radius: 20px;
+}
+.box .miniBox .acc .photo {
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+}
+.box .miniBox .acc .photo img {
+  width: 90%;
+  height: 90%;
+  padding: 0.5px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  border: 3.5px solid rgb(8, 8, 8);
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.box .miniBox .acc .ab {
+  font-size: 13px;
+  color: rgb(8, 8, 8);
+}
+.box .miniBox .acc .ab .material-icons {
+  font-weight: 500px;
+  font-size: 20px;
+  color: rgb(8, 8, 8);
+}
+.box .miniBox .settings {
+  width: 75%;
+  padding: 5px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: transparent;
+}
+.box .miniBox .settings button {
+  padding: 10px;
+  background-color: #b6e5d8;
+  color: #f3ece3;
+  border-color: whitesmoke;
+  border-radius: 20px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.box .miniBox .settings .second {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 630px) {
+  .box .miniBox .acc .photo {
+    width: 80px;
+    height: 80px;
+  }
+  .box .miniBox .acc .photo .ab {
+    font-size: 10px;
+  }
+}/*# sourceMappingURL=style.css.map */

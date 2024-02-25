@@ -1,0 +1,42 @@
+@import "../Profile/style.css";
+.box .box3 {
+  margin-top: 5px;
+  background-color: transparent;
+  padding: 0.2px;
+}
+.box .box3 .btns {
+  padding: 0.2px;
+}
+.box .box3 .btns .unfol {
+  padding: 5px;
+  background-color: #73ecfc;
+  border-color: whitesmoke;
+  border-radius: 20px;
+  color: rgb(8, 8, 8);
+  cursor: pointer;
+}
+.box .box3 .btns .unfol:hover {
+  font-size: small;
+}
+.box .box3 .btns .btnchat {
+  padding: 5px;
+  background-color: #b0f5e1;
+  border-color: whitesmoke;
+  border-radius: 20px;
+  color: rgb(8, 8, 8);
+  cursor: pointer;
+}
+.box .box3 .btns .btnchat:hover {
+  font-size: small;
+}
+.box .box3 .fol {
+  padding: 5px;
+  background-color: #73ecfc;
+  border-color: whitesmoke;
+  border-radius: 20px;
+  color: rgb(8, 8, 8);
+  cursor: pointer;
+}
+.box .box3 .fol:hover {
+  font-size: small;
+}/*# sourceMappingURL=style.css.map */

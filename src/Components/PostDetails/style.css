@@ -1,0 +1,50 @@
+.det {
+  background-color: rgba(8, 8, 8, 0.397);
+  padding: 6px;
+  border-radius: 25px;
+}
+.det .post {
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.det .post img {
+  width: 250px;
+  height: 250px;
+  border-radius: 25px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border: 1px solid whitesmoke;
+}
+.det .post h5,
+.det .post p {
+  color: whitesmoke;
+}
+.det .post p {
+  font-size: 10px;
+}
+.det .post .material-icons {
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.det .material-icons {
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

@@ -3,20 +3,17 @@ import { db, storage } from "../../firebase-config"
 import { ref, getDownloadURL, uploadBytesResumable } from 'firebase/storage'
 import { updateDoc, collection, doc, query, where, getDocs } from "firebase/firestore"
 import { useNavigate, useOutletContext } from "react-router-dom"
+import "./style.css"
 
 const Settings = () => {
-    const photoRef = useRef<string | any>()//change type
-
-    const userList = collection(db, "users")
-    const { user } = useOutletContext<any>()//change type
-
+    const { user } = useOutletContext<any>()
     const navigate = useNavigate()
+    const userList = collection(db, "users")
+    const photoRef = useRef<any>()
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-
         const file = photoRef.current.files[0]
-
         if (!file) {
             return
         }
@@ -39,13 +36,13 @@ const Settings = () => {
         })
     }
 
-    return <div>
-        <h2>Settings</h2>
+    return <div className="add">
         <form onSubmit={handleSubmit}>
             <div>
-                <input type="file" ref={photoRef} />
-                <button type="submit">Upload!</button>
+                <label htmlFor="file" className="f">choose file</label>
+                <input type="file" ref={photoRef} id="file" />
             </div>
+            <button type="submit">Upload!</button>
         </form>
     </div>
 }

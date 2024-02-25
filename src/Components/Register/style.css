@@ -1,0 +1,10 @@
+@import "../Login/style.css";
+.block .form {
+  width: 100%;
+}
+.block .form div ::-moz-placeholder {
+  font-size: 15px;
+}
+.block .form div ::placeholder {
+  font-size: 15px;
+}/*# sourceMappingURL=style.css.map */
